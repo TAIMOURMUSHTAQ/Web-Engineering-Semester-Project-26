@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Order Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/logo.png" alt="Order Management System logo">
+            <span>Order Management System</span>
+        </div>
+        <span class="role-tag">Employee: Ali Hassan</span>
+    </header>
+
+    <nav class="main-nav">
+        <a href="employee-dashboard.html">Dashboard</a>
+        <a href="new-order.html">New Order</a>
+        <a href="my-orders.html" class="active">My Orders</a>
+        <a href="commission.html">Commission</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+    <main>
+        <div class="page-title">
+            <h1>My Orders / Order Status</h1>
+            <p>All orders you have submitted, with their current approval status.</p>
+        </div>
+
+        <section class="card-grid">
+            <article class="card" id="pending-card">
+                <h3>Pending</h3>
+                <p class="value" id="count-pending">0</p>
+            </article>
+            <article class="card" id="approved-card">
+                <h3>Approved</h3>
+                <p class="value" id="count-approved">0</p>
+            </article>
+            <article class="card" id="rejected-card">
+                <h3>Rejected</h3>
+                <p class="value" id="count-rejected">0</p>
+            </article>
+        </section>
+
+        <p id="order-message" class="message hidden" role="status" aria-live="polite"></p>
+
+        <div class="toolbar">
+            <div class="toolbar-field">
+                <label for="order-search">Search</label>
+                <input type="text" id="order-search" placeholder="Customer name or order ID">
+            </div>
+            <div class="toolbar-field">
+                <label for="status-filter">Status</label>
+                <select id="status-filter">
+                    <option value="All">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+            <button type="button" class="btn secondary" id="clear-filters">Clear Filters</button>
+            <button type="button" class="btn secondary" id="reset-data">Reset Orders</button>
+        </div>
+        <p class="results-count" id="results-count"></p>
+
+        <table>
+            <caption>Submitted orders</caption>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Items</th>
+                    <th>Amount</th>
+                    <th>Payment</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="orders-body" data-view="employee"></tbody>
+        </table>
+    </main>
+
+    <footer class="site-footer">
+        <p>Order Management System | Web Engineering Project</p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Order Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-page">
+        <main class="login-panel">
+            <div class="login-brand">
+                <img src="images/logo.png" alt="Order Management System logo">
+                <span>Order Management System</span>
+            </div>
+
+            <h1>Sign in</h1>
+            <p class="subtitle">Record orders, approve them and follow each one to dispatch.</p>
+
+            <p id="login-message" class="message hidden" role="status" aria-live="polite"></p>
+
+            <form id="login-form" action="#" method="post" novalidate>
+                <fieldset class="role-switch">
+                    <legend>Login As</legend>
+                    <input type="radio" id="role-employee" name="role" value="employee" checked>
+                    <label for="role-employee">Employee</label>
+                    <input type="radio" id="role-admin" name="role" value="admin">
+                    <label for="role-admin">Administrator</label>
+                </fieldset>
+
+                <div class="form-row">
+                    <label for="username">Username or Email</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p class="login-hint">
+                <a href="employee-dashboard.html">Open Employee Dashboard</a> &nbsp;|&nbsp;
+                <a href="admin-dashboard.html">Open Admin Dashboard</a>
+            </p>
+        </main>
+
+        <!-- Decoration only: a shipping label showing the journey of one order. -->
+        <aside class="login-scene" aria-hidden="true">
+            <p class="scene-title">From counter<br>to courier.</p>
+
+            <div class="parcel-label">
+                <span class="label-tape"></span>
+                <span class="label-stamp">Approved</span>
+
+                <div class="label-row">
+                    <div>
+                        <small>Order</small>
+                        <strong>ORD-1047</strong>
+                    </div>
+                    <div>
+                        <small>Amount</small>
+                        <strong>Rs. 7,800</strong>
+                    </div>
+                </div>
+
+                <div class="label-address">
+                    <small>Ship to</small>
+                    <strong>Bilal Ahmed</strong>
+                    <span>House 24, Street 7, G-10, Islamabad</span>
+                </div>
+
+                <div class="label-barcode"></div>
+                <p class="label-tracking">TRK-884512</p>
+
+                <ol class="label-steps">
+                    <li>Recorded</li>
+                    <li>Paid</li>
+                    <li>Approved</li>
+                    <li>Dispatched</li>
+                </ol>
+            </div>
+        </aside>
+    </div>
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

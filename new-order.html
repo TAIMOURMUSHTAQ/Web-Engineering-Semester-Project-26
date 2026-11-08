@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Order - Order Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/logo.png" alt="Order Management System logo">
+            <span>Order Management System</span>
+        </div>
+        <span class="role-tag">Employee: Ali Hassan</span>
+    </header>
+
+    <nav class="main-nav">
+        <a href="employee-dashboard.html">Dashboard</a>
+        <a href="new-order.html" class="active">New Order</a>
+        <a href="my-orders.html">My Orders</a>
+        <a href="commission.html">Commission</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+    <main>
+        <div class="page-title">
+            <h1>New Order</h1>
+            <p>Record a new customer order. All fields marked with * are required.</p>
+        </div>
+
+        <p class="note">
+            Each field is checked as you complete the form. Submitted orders appear in
+            My Orders with the status Pending.
+        </p>
+
+        <p id="order-message" class="message hidden" role="status" aria-live="polite"></p>
+
+        <form class="form-card" id="order-form" action="#" method="post" enctype="multipart/form-data" novalidate>
+            <fieldset>
+                <legend>Customer Information</legend>
+
+                <div class="form-row">
+                    <label for="customer-name">Customer Name *</label>
+                    <input type="text" id="customer-name" name="customer_name" placeholder="e.g. Sana Malik" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="contact">Contact Number *</label>
+                    <input type="tel" id="contact" name="contact_number" placeholder="03XX-XXXXXXX" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="whatsapp">WhatsApp Number</label>
+                    <input type="tel" id="whatsapp" name="whatsapp_number" placeholder="03XX-XXXXXXX">
+                </div>
+
+                <div class="form-row">
+                    <label for="address">Customer Address *</label>
+                    <textarea id="address" name="customer_address" placeholder="House, street, area, city" required></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Order Details</legend>
+
+                <div class="form-row">
+                    <label for="amount">Order Amount (Rs.) *</label>
+                    <input type="number" id="amount" name="order_amount" min="0" step="1" placeholder="e.g. 4200" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="description">Order Description / Items *</label>
+                    <textarea id="description" name="order_description" placeholder="List the items in this order" required></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Payment Information</legend>
+
+                <div class="form-row">
+                    <label>Payment Method *</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="payment_method" value="cod" checked> Cash on Delivery (COD)</label>
+                        <label><input type="radio" name="payment_method" value="partial"> Partial Payment</label>
+                        <label><input type="radio" name="payment_method" value="full"> Full Payment</label>
+                    </div>
+                </div>
+
+                <div class="form-row" id="received-row">
+                    <label for="received">Amount Received (Rs.)</label>
+                    <input type="number" id="received" name="amount_received" min="0" step="1" placeholder="Enter amount received for Partial/Full payment">
+                </div>
+
+                <div class="form-row" id="receipt-row">
+                    <label for="receipt">Payment Receipt (for Partial or Full Payment)</label>
+                    <input type="file" id="receipt" name="payment_receipt" accept=".jpg,.jpeg,.png,.pdf">
+                </div>
+
+                <p class="balance-box">Balance Due: <strong id="balance-due">--</strong></p>
+            </fieldset>
+
+            <div class="btn-row">
+                <button type="submit" class="btn">Submit Order</button>
+                <button type="reset" class="btn secondary" id="reset-button">Reset</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <p>Order Management System | Web Engineering Project</p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/new-order.js"></script>
+</body>
+</html>

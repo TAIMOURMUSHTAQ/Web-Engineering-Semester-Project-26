@@ -1,0 +1,32 @@
+OrderHub - Figma design generator
+=================================
+
+What it does
+  Draws the complete Order Management System UI inside Figma:
+    - Cover page
+    - Design System page (colour styles, typography, components)
+    - Option A - Indigo Aurora   (recommended)  : 8 screens + clickable prototype
+    - Option B - Emerald Fresh                  : 8 screens + clickable prototype
+    - Option C - Midnight Neon (dark mode)      : 8 screens + clickable prototype
+    - Sitemap & ERD page
+
+How to run (Figma desktop app - Windows or Mac)
+  1. Unzip this folder anywhere (keep manifest.json, code.js and ui.html together).
+  2. Open the Figma desktop app and create a NEW blank design file.
+  3. Menu:  Plugins  >  Development  >  Import plugin from manifest...
+     (or right-click the canvas > Plugins > Development > Import plugin from manifest...)
+  4. Select the manifest.json file from this folder.
+  5. Run it:  Plugins  >  Development  >  OrderHub - OMS Design Generator
+  6. Tick the colour options you want and press "Generate design".
+     It takes about 10-30 seconds. Every node stays fully editable.
+
+Viewing the prototype
+  Open any "Option ..." page and press Present (the play button, top right).
+  It starts at the Login screen. Sidebar links, Sign in, New Order, View all,
+  Review approvals and Logout all navigate between screens.
+
+Notes
+  - Uses the Inter font, which ships with Figma. No internet access is needed.
+  - Running it twice creates the pages twice; use a fresh file each time.
+  - The plugin only runs in the desktop app (development plugins are not
+    available in the browser version).

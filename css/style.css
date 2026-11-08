@@ -1,0 +1,778 @@
+/* ============================================================
+   Order Management System - Main Stylesheet
+   Web Engineering Assignments 01-02 (Phases 1-2)
+   External CSS controlling the whole site.
+   ============================================================ */
+
+/* ---------- Base / Element selectors ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background-color: #f1f4f9;
+    color: #1f2933;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #16324f;
+    margin-bottom: 12px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #1f6feb;
+    text-decoration: none;
+}
+
+/* Descendant selector: links inside the main navigation */
+nav a {
+    color: #ffffff;
+}
+
+ul {
+    list-style-position: inside;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ---------- Layout: header, nav, main, footer ---------- */
+header.site-header {
+    background-color: #16324f;
+    color: #ffffff;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+}
+
+.brand span {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.role-tag {
+    background-color: #1f6feb;
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-size: 13px;
+}
+
+/* Navigation bar */
+nav.main-nav {
+    background-color: #1f4e79;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav.main-nav a {
+    display: inline-block;
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 3px solid transparent;
+}
+
+/* Pseudo-class :hover for navigation */
+nav.main-nav a:hover {
+    background-color: #16324f;
+    border-bottom: 3px solid #4da3ff;
+}
+
+nav.main-nav a.active {
+    background-color: #16324f;
+    border-bottom: 3px solid #4da3ff;
+}
+
+main {
+    max-width: 1050px;
+    margin: 24px auto;
+    padding: 0 20px;
+}
+
+footer.site-footer {
+    background-color: #16324f;
+    color: #cdd9e5;
+    text-align: center;
+    padding: 16px;
+    margin-top: 40px;
+    font-size: 13px;
+}
+
+/* ---------- Page heading block ---------- */
+.page-title {
+    border-left: 5px solid #1f6feb;
+    padding-left: 14px;
+    margin-bottom: 22px;
+}
+
+.page-title p {
+    color: #52606d;
+    margin-bottom: 0;
+}
+
+/* ---------- Summary cards (dashboards) ---------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #d7dee6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(22, 50, 79, 0.06);
+}
+
+.card h3 {
+    font-size: 14px;
+    color: #52606d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card .value {
+    font-size: 30px;
+    font-weight: bold;
+    color: #16324f;
+}
+
+.card .value.money {
+    color: #1a7f4b;
+}
+
+/* ID selector: special highlighted card */
+#pending-card {
+    border-top: 4px solid #e08a1e;
+}
+
+#approved-card {
+    border-top: 4px solid #1a7f4b;
+}
+
+/* ---------- Tables ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid #d7dee6;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    color: #16324f;
+    padding: 10px 4px;
+    font-size: 16px;
+}
+
+th, td {
+    padding: 11px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e4e9ef;
+    font-size: 14px;
+}
+
+thead th {
+    background-color: #1f4e79;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Descendant selector: zebra striping on table body rows */
+tbody tr:nth-child(even) {
+    background-color: #f6f9fc;
+}
+
+tbody tr:hover {
+    background-color: #eef4fb;
+}
+
+/* ---------- Status badges ---------- */
+.status {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status.pending {
+    background-color: #fbeccd;
+    color: #8a5a07;
+}
+
+.status.approved {
+    background-color: #d3f0df;
+    color: #11643a;
+}
+
+.status.rejected {
+    background-color: #f7d4d4;
+    color: #9a2222;
+}
+
+/* ---------- Forms ---------- */
+.form-card {
+    background-color: #ffffff;
+    border: 1px solid #d7dee6;
+    border-radius: 10px;
+    padding: 26px;
+    max-width: 720px;
+}
+
+fieldset {
+    border: 1px solid #d7dee6;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 22px;
+}
+
+legend {
+    font-weight: bold;
+    color: #1f4e79;
+    padding: 0 8px;
+}
+
+.form-row {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #3e4c59;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #c3ccd6;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #fcfdff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #1f6feb;
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.radio-group label {
+    display: inline-block;
+    font-weight: normal;
+    margin-right: 18px;
+}
+
+.radio-group input {
+    width: auto;
+    margin-right: 6px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #1f6feb;
+}
+
+.btn:hover {
+    background-color: #1657bd;
+}
+
+.btn.secondary {
+    background-color: #637485;
+}
+
+.btn.secondary:hover {
+    background-color: #4c5a68;
+}
+
+.btn.approve {
+    background-color: #1a7f4b;
+}
+
+.btn.approve:hover {
+    background-color: #13633a;
+}
+
+.btn.reject {
+    background-color: #c0392b;
+}
+
+.btn.reject:hover {
+    background-color: #9a2d22;
+}
+
+.btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* ---------- Login page ---------- */
+/* Split layout: the form sits on the left, a shipping label on the right. */
+.login-page {
+    display: grid;
+    grid-template-columns: minmax(380px, 5fr) 7fr;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.login-panel {
+    max-width: none;
+    margin: 0;
+    padding: 40px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-panel > * {
+    width: 100%;
+    max-width: 380px;
+}
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 36px;
+    font-weight: bold;
+    color: #16324f;
+}
+
+.login-brand img {
+    width: 36px;
+    height: 36px;
+}
+
+.login-panel h1 {
+    font-size: 38px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.login-panel .subtitle {
+    color: #52606d;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+/* Role choice: two radio buttons styled as one switch. */
+.role-switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.role-switch legend {
+    padding: 0;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3e4c59;
+}
+
+/* The radio stays in the page for keyboard users but is not drawn. */
+.role-switch input {
+    position: absolute;
+    opacity: 0;
+}
+
+.role-switch label {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #16324f;
+    color: #16324f;
+}
+
+.role-switch label:last-of-type {
+    border-left: none;
+}
+
+/* Sibling selector: style the label that follows the checked radio. */
+.role-switch input:checked + label {
+    background-color: #16324f;
+    color: #ffffff;
+}
+
+.role-switch input:focus-visible + label {
+    outline: 3px solid #4da3ff;
+    outline-offset: 2px;
+}
+
+.login-panel input[type="text"],
+.login-panel input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #9aa5b1;
+    border-radius: 0;
+    background-color: #f1f4f9;
+}
+
+.login-panel input[type="text"]:focus,
+.login-panel input[type="password"]:focus {
+    border-bottom-color: #1f6feb;
+    box-shadow: none;
+}
+
+.login-panel input.invalid {
+    border-bottom-color: #c0392b;
+    background-color: #fff6f5;
+}
+
+.login-panel .btn {
+    width: 100%;
+    margin-top: 4px;
+    padding: 13px 22px;
+    border-radius: 0;
+    background-color: #e08a1e;
+    color: #16324f;
+    font-size: 15px;
+}
+
+.login-panel .btn:hover {
+    background-color: #c97a14;
+}
+
+.login-hint {
+    font-size: 12px;
+    color: #52606d;
+    margin-top: 14px;
+    margin-bottom: 0;
+}
+
+/* Right side: navy panel with a dotted background. */
+.login-scene {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    padding: 40px;
+    background-color: #16324f;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+.scene-title {
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+/* The shipping label, built only with HTML and CSS. */
+.parcel-label {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 34px 26px 22px;
+    background-color: #fffdf6;
+    color: #16324f;
+    transform: rotate(-2.5deg);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.label-tape {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    width: 130px;
+    height: 30px;
+    margin-left: -65px;
+    background-color: rgba(224, 138, 30, 0.75);
+    transform: rotate(1.5deg);
+}
+
+.label-stamp {
+    position: absolute;
+    right: 18px;
+    top: 96px;
+    padding: 2px 10px;
+    border: 3px solid #1a7f4b;
+    border-radius: 4px;
+    color: #1a7f4b;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: rotate(9deg);
+}
+
+.parcel-label small {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #52606d;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 2px dashed #9aa5b1;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 17px;
+}
+
+.label-address {
+    padding: 12px 0;
+}
+
+.label-address strong {
+    display: block;
+    font-size: 19px;
+}
+
+.label-address span {
+    font-size: 13px;
+}
+
+/* Bars of different widths are made by one repeating gradient. */
+.label-barcode {
+    height: 58px;
+    background-image: repeating-linear-gradient(
+        90deg,
+        #16324f 0 3px, transparent 3px 5px,
+        #16324f 5px 6px, transparent 6px 9px,
+        #16324f 9px 13px, transparent 13px 15px,
+        #16324f 15px 16px, transparent 16px 20px
+    );
+}
+
+.label-tracking {
+    margin: 4px 0 14px;
+    text-align: center;
+    font-family: Consolas, "Courier New", monospace;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.label-steps {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-top: 12px;
+    border-top: 2px dashed #9aa5b1;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.label-steps li::before {
+    content: "\2713\00a0";
+    color: #1a7f4b;
+}
+
+/* Small screens: stack the form above a smaller label. */
+@media (max-width: 820px) {
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-panel {
+        padding: 32px 20px;
+    }
+
+    .login-panel > * {
+        max-width: none;
+    }
+
+    .login-brand {
+        margin-bottom: 24px;
+    }
+
+    .login-scene {
+        padding: 36px 24px 44px;
+    }
+
+    .scene-title {
+        font-size: 30px;
+    }
+}
+
+/* ---------- Helper text ---------- */
+.note {
+    background-color: #eef4fb;
+    border-left: 4px solid #1f6feb;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #3e4c59;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.actions-cell {
+    white-space: nowrap;
+}
+
+.actions-cell .btn {
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+/* ---------- Assignment 02: JavaScript interface states ---------- */
+.message {
+    border-left: 4px solid #1f6feb;
+    background-color: #eef4fb;
+    color: #16324f;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.message.success {
+    border-left-color: #1a7f4b;
+    background-color: #d3f0df;
+    color: #11643a;
+}
+
+.message.error {
+    border-left-color: #c0392b;
+    background-color: #f7d4d4;
+    color: #9a2222;
+}
+
+.hidden {
+    display: none;
+}
+
+.field-error {
+    color: #b3261e;
+    font-size: 13px;
+    margin: 6px 0 0;
+}
+
+input.invalid,
+textarea.invalid {
+    border-color: #c0392b;
+    background-color: #fff6f5;
+}
+
+input[readonly] {
+    background-color: #eef1f5;
+}
+
+.balance-box {
+    background-color: #eef4fb;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #16324f;
+}
+
+.balance-box strong {
+    color: #1a7f4b;
+    font-size: 18px;
+    margin-left: 6px;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.toolbar-field {
+    flex: 1 1 210px;
+}
+
+.toolbar input,
+.toolbar select {
+    height: 42px;
+}
+
+#commission-month {
+    max-width: 280px;
+}
+
+.results-count {
+    color: #52606d;
+    font-size: 13px;
+}
+
+.empty-row {
+    text-align: center;
+    color: #52606d;
+    font-weight: 600;
+    padding: 22px;
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#rejected-card {
+    border-top: 4px solid #c0392b;
+}

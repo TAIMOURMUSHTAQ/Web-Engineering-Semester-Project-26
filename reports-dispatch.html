@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports &amp; Dispatch - Order Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/logo.png" alt="Order Management System logo">
+            <span>Order Management System</span>
+        </div>
+        <span class="role-tag">Administrator</span>
+    </header>
+
+    <nav class="main-nav">
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="approvals.html">Order Approval</a>
+        <a href="reports-dispatch.html" class="active">Reports &amp; Dispatch</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+    <main>
+        <div class="page-title">
+            <h1>Reports &amp; Dispatch</h1>
+            <p>Dispatch details and payment status for approved orders.</p>
+        </div>
+
+        <section class="card-grid">
+            <article class="card" id="approved-card">
+                <h3>Ready to Dispatch</h3>
+                <p class="value" id="stat-ready">0</p>
+            </article>
+            <article class="card">
+                <h3>Dispatched</h3>
+                <p class="value" id="stat-dispatched">0</p>
+            </article>
+            <article class="card">
+                <h3>Amount Collected</h3>
+                <p class="value money" id="stat-collected">Rs. 0</p>
+            </article>
+            <article class="card" id="pending-card">
+                <h3>Pending Payment</h3>
+                <p class="value money" id="stat-outstanding">Rs. 0</p>
+            </article>
+        </section>
+
+        <table>
+            <caption>Dispatch report</caption>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Address</th>
+                    <th>Order Amount</th>
+                    <th>Payment Status</th>
+                    <th>Tracking Number</th>
+                </tr>
+            </thead>
+            <tbody id="dispatch-body"></tbody>
+        </table>
+    </main>
+
+    <footer class="site-footer">
+        <p>Order Management System | Web Engineering Project</p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

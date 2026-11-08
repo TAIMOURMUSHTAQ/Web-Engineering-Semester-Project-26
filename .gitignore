@@ -1,0 +1,14 @@
+# Reports and project documents: contain student names and registration numbers
+*Report*.pdf
+*Report*.docx
+docs/*.docx
+
+# Instructor's assignment brief
+Web_Engineering_Assignment_01_.docx
+
+# Word temporary and lock files
+~$*
+~WRL*.tmp
+
+# Editor settings
+.vscode/

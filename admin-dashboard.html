@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Order Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/logo.png" alt="Order Management System logo">
+            <span>Order Management System</span>
+        </div>
+        <span class="role-tag">Administrator</span>
+    </header>
+
+    <nav class="main-nav">
+        <a href="admin-dashboard.html" class="active">Dashboard</a>
+        <a href="approvals.html">Order Approval</a>
+        <a href="reports-dispatch.html">Reports &amp; Dispatch</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+    <main>
+        <div class="page-title">
+            <h1>Admin Dashboard</h1>
+            <p>Overview of all orders, payments, employees, and commissions.</p>
+        </div>
+
+        <section class="card-grid">
+            <article class="card">
+                <h3>Total Orders</h3>
+                <p class="value" id="stat-total">0</p>
+            </article>
+            <article class="card" id="pending-card">
+                <h3>Pending Approvals</h3>
+                <p class="value" id="stat-pending">0</p>
+            </article>
+            <article class="card" id="approved-card">
+                <h3>Approved Orders</h3>
+                <p class="value" id="stat-approved">0</p>
+            </article>
+            <article class="card">
+                <h3>Total Payments</h3>
+                <p class="value money" id="stat-payments">Rs. 0</p>
+            </article>
+            <article class="card">
+                <h3>Active Employees</h3>
+                <p class="value" id="stat-employees">0</p>
+            </article>
+            <article class="card">
+                <h3>Commission Payable</h3>
+                <p class="value money" id="stat-commission">Rs. 0</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Employee Summary</h2>
+            <table>
+                <caption>Employee performance</caption>
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Orders</th>
+                        <th>Approved</th>
+                        <th>Pending</th>
+                        <th>Commission</th>
+                    </tr>
+                </thead>
+                <tbody id="employee-summary-body"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Order Management System | Web Engineering Project</p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

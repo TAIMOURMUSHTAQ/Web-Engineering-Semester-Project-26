@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commission - Order Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/logo.png" alt="Order Management System logo">
+            <span>Order Management System</span>
+        </div>
+        <span class="role-tag">Employee: Ali Hassan</span>
+    </header>
+
+    <nav class="main-nav">
+        <a href="employee-dashboard.html">Dashboard</a>
+        <a href="new-order.html">New Order</a>
+        <a href="my-orders.html">My Orders</a>
+        <a href="commission.html" class="active">Commission</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+    <main>
+        <div class="page-title">
+            <h1>Employee Commission</h1>
+            <p>Commission is calculated at 7.5% of orders approved in each month.</p>
+        </div>
+
+        <div class="toolbar">
+            <div class="toolbar-field">
+                <label for="commission-month">Month</label>
+                <select id="commission-month"></select>
+            </div>
+        </div>
+
+        <section class="card-grid">
+            <article class="card">
+                <h3>Approved Orders</h3>
+                <p class="value" id="commission-orders">0</p>
+            </article>
+            <article class="card">
+                <h3>Total Sales</h3>
+                <p class="value money" id="commission-sales">Rs. 0</p>
+            </article>
+            <article class="card">
+                <h3>Commission Rate</h3>
+                <p class="value" id="commission-rate">0</p>
+            </article>
+            <article class="card" id="approved-card">
+                <h3>Commission Earned</h3>
+                <p class="value money" id="commission-earned">Rs. 0</p>
+            </article>
+        </section>
+
+        <table>
+            <caption>Monthly commission breakdown</caption>
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Approved Orders</th>
+                    <th>Total Sales</th>
+                    <th>Rate</th>
+                    <th>Commission</th>
+                </tr>
+            </thead>
+            <tbody id="commission-body"></tbody>
+        </table>
+    </main>
+
+    <footer class="site-footer">
+        <p>Order Management System | Web Engineering Project</p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/commission.js"></script>
+</body>
+</html>
